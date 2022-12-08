@@ -11,7 +11,7 @@ if git status &>/dev/null; then
 
     git_url="${git_base_url}/tree/${git_branch}/${git_path}"
 
-    /Applications/Firefox.app/Contents/MacOS/firefox "${git_url}"
+    open "${git_url}"
 else
     echo "This isn't a git repository..."
 fi

@@ -9,7 +9,7 @@ if git status &>/dev/null; then
 
     pr_url="${git_base_url}/compare/main...${git_branch}"
 
-    /Applications/Firefox.app/Contents/MacOS/firefox "${pr_url}"
+    open "${pr_url}"
 else
     echo "This isn't a git repository..."
 fi
