@@ -1,6 +1,6 @@
 # Custom Git Commands
 
-> This is all made for MacOS and using zsh as your shell.
+> This is all made for MacOS and assumes you are running zsh as your shell.
 
 1. Make sure you have a `src` directory in your `home`
 
@@ -24,3 +24,8 @@
 5. Source your profile to reload your path
         
         source ${HOME}/.zshrc
+
+6. Verify the custom commands are loaded
+    > If this outputs `Hello World!` to stdout, the commands are loaded and available for use
+
+        git echo "Hello World!"
