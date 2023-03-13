@@ -1,3 +1,10 @@
 #!/bin/zsh
+## Custom command `git echo`
+# Sample command that shows that custom commands are possible
+# Use `git echo hello-world` in a git repo to see it in action
 
-echo $1
+if git status &>/dev/null; then
+	echo $1
+else
+	echo "This isn't a git repository..."
+fi

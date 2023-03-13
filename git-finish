@@ -1,5 +1,6 @@
 #!/bin/zsh
-## Switches to the default branch and pulls
+## Custom command `git finish`
+# Switches to the default branch and pulls
 # then deletes the branch you were working on
 # and does a fetch --prune to clean up the
 # list of remote branhces

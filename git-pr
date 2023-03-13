@@ -1,4 +1,7 @@
 #!/bin/zsh
+## Custom command `git pr` 
+# Opens your default browser directly to 
+# create a PR for your current branch
 
 if git status &>/dev/null; then
     origin=$(git remote get-url --push origin)

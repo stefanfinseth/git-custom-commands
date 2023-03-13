@@ -1,4 +1,7 @@
 #!/bin/zsh
+## Custom command `git web`
+# Opens your default browser directly to
+# your current branch and position in github or gitlab
 
 if git status &>/dev/null; then
     origin=$(git remote get-url --push origin)
