@@ -1,0 +1,18 @@
+#!/bin/zsh
+## Switches to the default branch and pulls
+# then deletes the branch you were working on
+# and does a fetch --prune to clean up the
+# list of remote branhces
+
+if git status &>/dev/null; then
+	default_branch=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')
+	working_branch=$(git branch --show-current)
+
+	git switch $default_branch
+	git pull
+	git branch -d $working_branch
+	git fetch --prune
+
+else
+	echo "This isn't a git repository..."
+fi
