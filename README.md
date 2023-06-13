@@ -10,9 +10,9 @@
 
         git clone git@gitlab.com:finseth/git-custom-commands.git $HOME/src/git-custom-commands
 
-3. Set execution rights on all files in the folder
+3. Use the Makefile to set execution rights on all files in the folder
  
-        sudo chmod -R 755 ${HOME}/src/git-custom-commands
+        make setup
 
 4. Add the custom git comands to your path
     > If you're using a `.zshrc.local` file, you should add it there instead
