@@ -1,0 +1,11 @@
+#!/bin/zsh
+## Custom command `git qamend` (short for quick amend)
+# Amends your current changes with no edit and force pushes
+
+if git status &>/dev/null; then
+    git add .
+    git commit --amend --no-edit
+    git push --force
+else
+    echo "This isn't a git repository..."
+fi
