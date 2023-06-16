@@ -24,7 +24,7 @@ if git status &>/dev/null; then
 
     git_branch=$(git branch --show-current)
 
-    pr_url="${git_repo_url}/compare/main...${git_branch}"
+    pr_url="${git_repo_url}/compare/${git_branch}"
 
     open "${pr_url}"
 else
