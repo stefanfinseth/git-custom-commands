@@ -1,0 +1,19 @@
+#!/bin/zsh
+## Custom command `git send`
+# Sets the upstream of your branch 
+# and chains into the `git pr` command
+# to directly open a new PR for your branch
+
+if git status &>/dev/null; then
+    git_branch=$(git branch --show-current)
+
+    if git name-rev @{u} &>/dev/null; then
+        git push
+    else
+        git push -u origin $git_branch &>/dev/null
+    fi
+
+    git pr
+else
+    echo "This isn't a git repository..."
+fi
