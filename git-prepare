@@ -1,0 +1,17 @@
+#!/bin/zsh
+## custom command `git prepare`
+# Uses git finish command and
+# then creates a new branch with
+# a given name
+
+work_branch=$1
+
+if git status &>/dev/null; then
+
+    git finish
+    git checkout -b $work_branch
+
+else
+    echo "This isn't a git repository..."
+fi
+
