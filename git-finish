@@ -9,9 +9,14 @@ if git status &>/dev/null; then
 	default_branch=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')
 	working_branch=$(git branch --show-current)
 
-	git switch $default_branch
-	git pull
-	git branch -d $working_branch
+	if [[ "$working_branch" != "$default_branch" ]]; then
+		git switch $default_branch
+		git pull
+		git branch -d $working_branch
+	else
+		git pull
+	fi
+
 	git fetch --prune
 
 else
